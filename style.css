@@ -1,0 +1,18 @@
+#form {
+    border: black 5px solid;
+    padding: 5px 5px 5px 5px;
+    float: left;
+    text-align: justify;
+}
+
+#userid {
+    width: 100px;
+}
+
+#passwrd {
+    width: 100px;
+}
+
+#postalcode {
+    width: 100px;
+}
