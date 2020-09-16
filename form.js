@@ -6,9 +6,8 @@ const country = document.getElementById("countries");
 const postalCode = document.getElementById("postalcode");
 const eMail = document.getElementById("email");
 
-//nämä div elementeiksi että ne saa toimimaan
-const gender = document.querySelector("input[name='gender']:checked");
-const language = document.querySelector("input[name='language']:checked");
+const gender = document.getElementsByName("gender");
+const language = document.getElementsByName("language");
 
 const moreInfo = document.getElementById("moreinfo");
 
@@ -22,6 +21,13 @@ form.addEventListener("submit", (e) => {
     chooseCountry();
     chooseGender();
     chooseLanguage();
+
+    const lomakeTiedot = document.getElementById("lomaketiedot");
+
+    const newLi = document.createElement("LI");
+    const liContent = document.createTextNode();
+    newLi.appendChild(liContent);
+    lomakeTiedot.appendChild(newLi);
 });
 
 function checkInputsText() {
@@ -93,15 +99,14 @@ function chooseCountry() {
 }
 
 function chooseGender() {
-    const genderValue = gender.value;
 
-    if (genderValue == "male") {
+    if (gender[0].checked == true) {
         console.log("mies");
     }
-    else if (genderValue == "female") {
+    else if (gender[1].checked == true) {
         console.log("nainen");
     }
-    else if (genderValue == "other") {
+    else if (gender[2].checked == true) {
         console.log("muu");
     }
     else {
@@ -111,19 +116,18 @@ function chooseGender() {
 }
 
 function chooseLanguage() {
-    const languageValue = language.value;
 
-    if (languageValue == "finish") {
-        console.log("suomi valittu");
+    if (language[0].checked == true && language[1].checked == true) {
+        console.log("molemmat valittu");
     }
-    else if (languageValue == "english") {
+    else if (language[1].checked == true) {
         console.log("englanti valittu");
     }
-    else if (languageValue == "finish" && languageValue == "english") {
-        console.log("molemmat valittu");
+    else if (language[0].checked == true) {
+        console.log("suomi valittu");
     }
     else {
         alert("Et valinnut kieltä!");
-        console.log(error);
+        console.log("error");
     }
 }
