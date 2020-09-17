@@ -14,6 +14,17 @@ const moreInfo = document.getElementById("moreinfo");
 const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit");
 
+document.getElementById("userid").innerHTML = localStorage.getItem("userId");
+document.getElementById("passwrd").innerHTML = localStorage.getItem("passWrd");
+document.getElementById("name").innerHTML = localStorage.getItem("userName");
+document.getElementById("address").innerHTML = localStorage.getItem("userAddress");
+document.getElementById("countries").innerHTML = localStorage.getItem("country");
+document.getElementById("postalcode").innerHTML = localStorage.getItem("postalCode");
+document.getElementById("email").innerHTML = localStorage.getItem("eMail");
+document.getElementsByName("gender").innerHTML = localStorage.getItem("gender");
+document.getElementsByName("language").innerHTML = localStorage.getItem("language");
+document.getElementById("moreinfo").innerHTML = localStorage.getItem("moreInfo");
+
 form.addEventListener("submit", (e) => {
 
     e.preventDefault();
@@ -22,75 +33,70 @@ form.addEventListener("submit", (e) => {
     chooseGender();
     chooseLanguage();
 
-    const lomakeTiedot = document.getElementById("lomaketiedot");
-
-    const newLi = document.createElement("LI");
-    const liContent = document.createTextNode();
-    newLi.appendChild(liContent);
-    lomakeTiedot.appendChild(newLi);
 });
 
 function checkInputsText() {
 
-    const idValue = userId.value.trim();
-    const passWrdValue = passWrd.value.trim();
-    const userNameValue = userName.value.trim();
-    const postalCodeValue = postalCode.value.trim();
-    const eMailValue = eMail.value.trim();
-
     //id
-    if (idValue.length < 6 || idValue.length > 20) {
+    if (userId.value.length < 6 || userId.value.length > 20) {
         alert("ID pitää olla vähintään 6 merkkiä pitkä ja enintään 20 merkkiä!");
-        console.log(error);
+        console.log("id ei hyväksytty");
     }
     else {
-        console.log(true);
+        console.log(userId.value);
     }
     //salasana
-    if (passWrdValue.length < 6 || passWrdValue.length > 20) {
+    if (passWrd.value.length < 6 || passWrd.value.length > 20) {
         alert("Salasana pitää olla vähintään 6 merkkiä pitkä ja enintään 20 merkkiä!")
-        console.log(error);
+        console.log("salasana ei hyväksytty");
     }
     else {
-        console.log(true);
+        console.log(passWrd.value);
     }
     //nimi
-    if (userNameValue.length < 3 || userNameValue.length > 30) {
-        alert("Nimi liian lyht tai pitkä (min 3, max 30)!");
-        console.log(error);
-    }
-
-    //postinumero
-    if (postalCodeValue.length < 5 || postalCodeValue.length > 5) {
-        alert("Postinumero on liian pitkä tai lyhyt!")
-        console.log(error);
+    if (userName.value.length < 3 || userName.value.length > 30) {
+        alert("Nimi liian lyhyt tai pitkä (min 3, max 30)!");
+        console.log("nimi ei hyväksytty");
     }
     else {
-        console.log(true);
+        console.log(userName.value);
+    }
+    //postinumero
+    if (postalCode.value.length < 5 || postalCode.value.length > 5) {
+        alert("Postinumero on liian pitkä tai lyhyt!")
+        console.log("postinumero ei hyväksytty");
+    }
+    else {
+        console.log(postalCode.value);
     }
     //email
-    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMailValue)) {
-        console.log(true);
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) {
+        console.log(eMail.value);
     }
     else {
         alert("Viallinen sähköposti!");
-        console.log(error);
+        console.log("sähköposti ei hyväksytty");
+    }
+    if (moreInfo != " ") {
+        console.log(moreInfo.value);
+    }
+    else {
+        console.log("lisätietoja ei kirjoitettu");
     }
 }
 
 function chooseCountry() {
-    const countryValue = country.value;
 
-    if (countryValue == "finland") {
+    if (country.value == "finland") {
         console.log("suomi");
     }
-    else if (countryValue == "russia") {
+    else if (country.value == "russia") {
         console.log("venäjä");
     }
-    else if (countryValue == "sweden") {
+    else if (country.value == "sweden") {
         console.log("ruotsi");
     }
-    else if (countryValue == "denmark") {
+    else if (country.value == "denmark") {
         console.log("saksa");
     }
     else {
@@ -101,24 +107,24 @@ function chooseCountry() {
 function chooseGender() {
 
     if (gender[0].checked == true) {
-        console.log("mies");
+        console.log("mies valittu");
     }
     else if (gender[1].checked == true) {
-        console.log("nainen");
+        console.log("nainen valittu");
     }
     else if (gender[2].checked == true) {
-        console.log("muu");
+        console.log("muu sukupuoli valittu");
     }
     else {
         alert("Valitse sukupuoli!");
-        console.log(error);
+        console.log("sukupuolta  ei valittu");
     }
 }
 
 function chooseLanguage() {
 
     if (language[0].checked == true && language[1].checked == true) {
-        console.log("molemmat valittu");
+        console.log("suomi ja englanti valittu");
     }
     else if (language[1].checked == true) {
         console.log("englanti valittu");
@@ -128,6 +134,19 @@ function chooseLanguage() {
     }
     else {
         alert("Et valinnut kieltä!");
-        console.log("error");
+        console.log("kieltä ei valittu");
     }
+}
+
+function getData() {
+    localStorage.setItem("userId", userId.value);
+    localStorage.setItem("passWrd", passWrd.value);
+    localStorage.setItem("userName", userName.value);
+    localStorage.setItem("userAddress", userAddress.value);
+    localStorage.setItem("country", country.value);
+    localStorage.setItem("postalCode", postalCode.value);
+    localStorage.setItem("eMail", eMail.value);
+    localStorage.setItem("gender", gender.value);
+    localStorage.setItem("language", language.value);
+    localStorage.setItem("moreInfo", moreInfo.value);
 }
