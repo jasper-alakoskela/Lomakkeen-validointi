@@ -11,7 +11,6 @@
 <body>
     <h1>Rekisteröitymislomake</h1>
     <h3>Siirry kentästä toiseen tab-näppäimellä.</h3>
-    <a href="tiedot.html" target="_blank">tiedot</a>
     <form action="tiedot.html" id="form" method="GET">
         <label for="userid">Käyttäjä ID:</label>
         <input type="text" id="userid" placeholder="min 6 max 20"
@@ -69,7 +68,7 @@
         <input type="text" id="moreinfo" placeholder="ei pakollinen">
         <br>
         <br>
-        <input type="submit" value="Lähetä" onclick="getData()">
+        <input type="submit" value="Lähetä" onclick="getData()" onclick="window.location.href='/tiedot.html'">
     </form>
 
     <script src="form.js"></script>

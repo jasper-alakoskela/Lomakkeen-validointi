@@ -5,12 +5,9 @@ const userAddress = document.getElementById("address");
 const country = document.getElementById("countries");
 const postalCode = document.getElementById("postalcode");
 const eMail = document.getElementById("email");
-
 const gender = document.getElementsByName("gender");
 const language = document.getElementsByName("language");
-
 const moreInfo = document.getElementById("moreinfo");
-
 const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit");
 
@@ -135,7 +132,16 @@ function getData() {
     localStorage.setItem("country", country.value);
     localStorage.setItem("postalCode", postalCode.value);
     localStorage.setItem("eMail", eMail.value);
+
+    const gender = document.querySelector("input[name='gender']");
     localStorage.setItem("gender", gender.value);
-    localStorage.setItem("language", language.value);
+
+    const language = document.querySelectorAll("input[name='language']");
+    const languages = [];
+    for (i = 0; i < language.length; i++) {
+        console.log(language[i].value)
+        languages.push(language[i].value);
+    }
+    localStorage.setItem("language", languages);
     localStorage.setItem("moreInfo", moreInfo.value);
 }
