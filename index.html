@@ -11,7 +11,8 @@
 <body>
     <h1>Rekisteröitymislomake</h1>
     <h3>Siirry kentästä toiseen tab-näppäimellä.</h3>
-    <form action="tiedot.html" id="form">
+    <a href="tiedot.html" target="_blank">tiedot</a>
+    <form action="tiedot.html" id="form" method="GET">
         <label for="userid">Käyttäjä ID:</label>
         <input type="text" id="userid" placeholder="min 6 max 20"
             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
@@ -30,7 +31,7 @@
         <br>
         <br>
         <label for="countries">Maa:</label>
-        <select name="countries" id="countries">
+        <select name="countries" id="countries" class="countries">
             <option value="choosecountry">Valitse maa</option>
             <option value="finland">Suomi</option>
             <option value="russia">Venäjä</option>

@@ -11,17 +11,28 @@
     <div>
         Käyttäjä ID on: <span id="userid">ID</span><br>
         Käyttäjä Salasana on: <span id="passwrd">Salasana</span><br>
-        Käyttäjä Nimi on: <span id="username">Nimi</span><br>
+        Käyttäjä Nimi on: <span id="name">Nimi</span><br>
         Käyttäjä Osoite on: <span id="address">Osoite</span><br>
-        Käyttäjä Maa on: <span id="country">Maa</span><br>
+        Käyttäjä Maa on: <span class="country">Maa</span><br>
         Käyttäjä Postinumero on: <span id="postalcode">Postinumero</span><br>
         Käyttäjä Sähköposti on: <span id="email">Sähköposti</span><br>
-        Käyttäjä Sukupuoli on: <span id="gender">Sähköposti</span><br>
-        Käyttäjä Kieli on: <span id="language">Kieli</span><br>
+        Käyttäjä Sukupuoli on: <span name="gender">Sukupuoli</span><br>
+        Käyttäjä Kieli on: <span name="language">Kieli</span><br>
         Lisätietoja: <span id="moreinfo">Lisätietoja</span><br>
     </div>
 
-    <script src="form.js"></script>
+    <script>
+        document.getElementById("userid").innerHTML = localStorage.getItem("userId");
+        document.getElementById("passwrd").innerHTML = localStorage.getItem("passWrd");
+        document.getElementById("name").innerHTML = localStorage.getItem("userName");
+        document.getElementById("address").innerHTML = localStorage.getItem("userAddress");
+        document.getElementsByClassName("countries").innerHTML = localStorage.getItem("country");
+        document.getElementById("postalcode").innerHTML = localStorage.getItem("postalCode");
+        document.getElementById("email").innerHTML = localStorage.getItem("eMail");
+        document.getElementsByName("gender").innerHTML = localStorage.getItem("gender");
+        document.getElementsByName("language").innerHTML = localStorage.getItem("language");
+        document.getElementById("moreinfo").innerHTML = localStorage.getItem("moreInfo");
+    </script>
 </body>
 
 </html>

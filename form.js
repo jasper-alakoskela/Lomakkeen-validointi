@@ -14,17 +14,6 @@ const moreInfo = document.getElementById("moreinfo");
 const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit");
 
-document.getElementById("userid").innerHTML = localStorage.getItem("userId");
-document.getElementById("passwrd").innerHTML = localStorage.getItem("passWrd");
-document.getElementById("name").innerHTML = localStorage.getItem("userName");
-document.getElementById("address").innerHTML = localStorage.getItem("userAddress");
-document.getElementById("countries").innerHTML = localStorage.getItem("country");
-document.getElementById("postalcode").innerHTML = localStorage.getItem("postalCode");
-document.getElementById("email").innerHTML = localStorage.getItem("eMail");
-document.getElementsByName("gender").innerHTML = localStorage.getItem("gender");
-document.getElementsByName("language").innerHTML = localStorage.getItem("language");
-document.getElementById("moreinfo").innerHTML = localStorage.getItem("moreInfo");
-
 form.addEventListener("submit", (e) => {
 
     e.preventDefault();
@@ -32,7 +21,7 @@ form.addEventListener("submit", (e) => {
     chooseCountry();
     chooseGender();
     chooseLanguage();
-
+    getData();
 });
 
 function checkInputsText() {
@@ -100,7 +89,7 @@ function chooseCountry() {
         console.log("saksa");
     }
     else {
-        console.log("et valinnut sukupuolta!");
+        console.log("et valinnut maata!");
     }
 }
 
