@@ -9,16 +9,17 @@
 </head>
 
 <body>
-    <div>
-        Käyttäjä ID on: <span id="userid">ID</span><br>
-        Käyttäjä Salasana on: <span id="passwrd">Salasana</span><br>
-        Käyttäjä Nimi on: <span id="name">Nimi</span><br>
-        Käyttäjä Osoite on: <span id="address">Osoite</span><br>
-        Käyttäjä Maa on: <span id="country">Maa</span><br>
-        Käyttäjä Postinumero on: <span id="postalcode">Postinumero</span><br>
-        Käyttäjä Sähköposti on: <span id="email">Sähköposti</span><br>
-        Käyttäjä Sukupuoli on: <span id="gender">Sukupuoli</span><br>
-        Käyttäjä Kieli on: <span id="language">Kieli</span><br>
+    <h1>Käyttäjän tiedot:</h1>
+    <div class="tiedot">
+        Käyttäjä ID on: <span id="userid">ID</span><br><br>
+        Käyttäjä Salasana on: <span id="passwrd">Salasana</span><br><br>
+        Käyttäjä Nimi on: <span id="name">Nimi</span><br><br>
+        Käyttäjä Osoite on: <span id="address">Osoite</span><br><br>
+        Käyttäjä Maa on: <span id="country">Maa</span><br><br>
+        Käyttäjä Postinumero on: <span id="postalcode">Postinumero</span><br><br>
+        Käyttäjä Sähköposti on: <span id="email">Sähköposti</span><br><br>
+        Käyttäjä Sukupuoli on: <span id="gender">Sukupuoli</span><br><br>
+        Käyttäjä Kieli on: <span id="language">Kieli</span><br><br>
         Lisätietoja: <span id="moreinfo">Lisätietoja</span><br>
     </div>
 
@@ -33,6 +34,8 @@
         document.getElementById("gender").innerHTML = localStorage.getItem("gender");
         document.getElementById("language").innerHTML = localStorage.getItem("language");
         document.getElementById("moreinfo").innerHTML = localStorage.getItem("moreInfo");
+
+
     </script>
 </body>
 

@@ -32,10 +32,10 @@
         <label for="countries">Maa:</label>
         <select name="countries" id="countries" class="countries">
             <option value="choosecountry">Valitse maa</option>
-            <option value="finland">Suomi</option>
-            <option value="russia">Venäjä</option>
-            <option value="sweden">Ruotsi</option>
-            <option value="denmark">Saksa</option>
+            <option value="Suomi">Suomi</option>
+            <option value="Venäjä">Venäjä</option>
+            <option value="Ruotsi">Ruotsi</option>
+            <option value="Saksa">Saksa</option>
         </select>
         <br>
         <br>
@@ -49,26 +49,26 @@
         <br>
         <br>
         <label for="gender">Sukupuoli:</label>
-        <input type="radio" name="gender" value="male">
+        <input type="radio" name="gender" value="Mies">
         <label for="male">Mies</label>
-        <input type="radio" name="gender" value="female">
+        <input type="radio" name="gender" value="Nainen">
         <label for="female">Nainen</label>
-        <input type="radio" name="gender" value="other">
+        <input type="radio" name="gender" value="Muu">
         <label for="other">Muu</label>
         <br>
         <br>
         <label>Kieli:</label>
         <label for="finish">Suomi</label>
-        <input type="checkbox" name="language" value="finish">
+        <input type="checkbox" name="language" value="Suomi">
         <label for="english">Englanti</label>
-        <input type="checkbox" name="language" value="english">
+        <input type="checkbox" name="language" value="Englanti">
         <br>
         <br>
         <label>Lisätietoja:</label>
         <input type="text" id="moreinfo" placeholder="ei pakollinen">
         <br>
         <br>
-        <input type="submit" value="Lähetä" onclick="getData()" onclick="window.location.href='/tiedot.html'">
+        <input type="submit" value="Lähetä" onclick="getData()" id="submit">
     </form>
 
     <script src="form.js"></script>

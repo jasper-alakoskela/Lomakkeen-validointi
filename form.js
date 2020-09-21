@@ -11,14 +11,14 @@ const moreInfo = document.getElementById("moreinfo");
 const form = document.getElementById("form");
 const submitBtn = document.getElementById("submit");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submitBtn", (e) => {
 
     e.preventDefault();
     checkInputsText();
     chooseCountry();
     chooseGender();
     chooseLanguage();
-    getData();
+
 });
 
 function checkInputsText() {
@@ -73,16 +73,16 @@ function checkInputsText() {
 
 function chooseCountry() {
 
-    if (country.value == "finland") {
+    if (country.value == "Suomi") {
         console.log("suomi");
     }
-    else if (country.value == "russia") {
+    else if (country.value == "Venäjä") {
         console.log("venäjä");
     }
-    else if (country.value == "sweden") {
+    else if (country.value == "Ruotsi") {
         console.log("ruotsi");
     }
-    else if (country.value == "denmark") {
+    else if (country.value == "Saksa") {
         console.log("saksa");
     }
     else {
@@ -133,10 +133,10 @@ function getData() {
     localStorage.setItem("postalCode", postalCode.value);
     localStorage.setItem("eMail", eMail.value);
 
-    const gender = document.querySelector("input[name='gender']");
+    const gender = document.querySelector("input[name='gender']:checked");
     localStorage.setItem("gender", gender.value);
 
-    const language = document.querySelectorAll("input[name='language']");
+    const language = document.querySelectorAll("input[name='language']:checked");
     const languages = [];
     for (i = 0; i < language.length; i++) {
         console.log(language[i].value)
